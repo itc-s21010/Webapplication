@@ -1,13 +1,14 @@
-import React, {useState} from 'react'
+import React, 'react'
 import './App.css'
 
 const LikeButton = () => {
   const [liked, setLiked] = (false)
   const toggleLiked = () => setLiked(!liked)
   return (
-    <button className='likeButton' onClick={toggleLiked}>
+
+  <button className='likeButton' onClick={toggleLiked}>
     {liked ? 'いいね済' : 'いいね前'}
-    </button>
+  </button>
   )
 }
 export default App
