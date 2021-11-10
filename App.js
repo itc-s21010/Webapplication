@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import './App.css'
 
-function App() {
+const INITIAL_COUNT = 0
+const App = () => {
+  const [count, setCount] = useState(INITIAL_COUNT)
+  const countAdd = () => setCount(prevCount => prevCount + 1)
+  const countSub = () => setCount(prevCount => prevCount - 1)
+  const countReact = () => setCount(INITIAL_COUNT)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <button onClick={countAdd}>ボタン +1</button>
+      <button onClick={countSub}>ボタン -1</button>
+      <button onClick={countReact}>リセット</button>
+      <p>カウント:{count}</p>
+    </>
+  )
 }
 
-export default App;
+export default App
